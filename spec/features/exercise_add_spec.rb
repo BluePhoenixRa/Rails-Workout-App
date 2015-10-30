@@ -19,7 +19,7 @@ RSpec.feature "Add New Workout" do
     click_button "Add Workout"
     expect(page).to have_content("Workout added successfully!")
 
-    workout = Exercise.last
-    expect(page.current_path).to eq(user_workouts_path(@kate, workout))
+    exercise = Exercise.last
+    expect(page.current_path).to eq(user_exercise_path(@kate, exercise))
   end
 end

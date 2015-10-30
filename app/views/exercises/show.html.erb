@@ -1,0 +1,15 @@
+  <h1>Workout Details</h1>
+  <div class="well">
+    <strong>Date:</strong> <%= @exercise.workout_date %>
+  </div>
+
+  <div class="well">
+    <strong>Duration:</strong> <%= @exercise.duration %>
+  </div>
+
+  <div class="well">
+    <p><strong>Workout Details:</strong></p>
+    <p><%= @exercise.workout %></p>
+  </div>
+
+  <p><%= link_to "Back", user_exercises_path(current_user) %></p>

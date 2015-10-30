@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_exercise, except: [:index, :new, :create]
 
   def index
@@ -21,9 +22,17 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   private
 
     def exercise_params
       params.require(:exercise).permit(:duration, :workout, :workout_date, :user_id)
+    end
+
+    def set_exercise
+      @exercise = current_user.exercises.find(params[:id])
     end
 end
