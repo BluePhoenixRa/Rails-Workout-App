@@ -22,4 +22,23 @@ RSpec.feature "Add New Workout" do
     exercise = Exercise.last
     expect(page.current_path).to eq(user_exercise_path(@kate, exercise))
   end
+
+  scenario "Add with invalid Inputs" do
+    visit "/"
+
+    click_link "My Workouts"
+    click_link "Add Workout"
+    expect(page).to have_link("Back")
+
+    fill_in "Duration", with: nil
+    fill_in "Workout", with: ""
+    fill_in "Date", with: ""
+    click_button "Add Workout"
+
+    expect(page).to have_content("Failed to add new workout")
+    expect(page).to have_content("Duration can't be blank")
+    expect(page).to have_content("Duration is not a number")
+    expect(page).to have_content("Workout can't be blank")
+    expect(page).to have_content("Workout date can't be blank")
+  end
 end
