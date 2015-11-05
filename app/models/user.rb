@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   self.per_page = 2 #For Paginating by 10 users per page
 
   has_many :exercises
+
+  def self.search_by_username(username)
+      where('username LIKE ?', "%#{username}%").order(:id)
+  end
 end
