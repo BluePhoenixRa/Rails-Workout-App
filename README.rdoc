@@ -2,7 +2,7 @@
 
 The Rails app is intended to serve as a demonstration of building an app with *RSpec, Capybara, Guard, and ElasticSearch.*
 
-A *user* can sign up, log in, and add their workouts. Based on user's workout over the week, a chart will be displayed in their *"My Workouts"* page.
+A *user* can sign up, log in, and add their workouts. Based on user's workout over the week, a chart will be displayed in their <bold>"My Workouts"</bold> page.
 
 http://i.imgur.com/8ctbbqs.png
 
