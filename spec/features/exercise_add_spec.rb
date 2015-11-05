@@ -16,7 +16,7 @@ RSpec.feature "Add New Workout" do
     fill_in "Duration", with: 70
     fill_in "Workout", with: "Running"
     fill_in "Date", with: "2015-10-28"
-    click_button "Add Workout"
+    click_button "Create Exercise"
     expect(page).to have_content("Workout added successfully!")
 
     exercise = Exercise.last
@@ -33,7 +33,7 @@ RSpec.feature "Add New Workout" do
     fill_in "Duration", with: nil
     fill_in "Workout", with: ""
     fill_in "Date", with: ""
-    click_button "Add Workout"
+    click_button "Create Exercise"
 
     expect(page).to have_content("Failed to add new workout")
     expect(page).to have_content("Duration can't be blank")
