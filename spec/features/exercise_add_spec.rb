@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Add New Workout" do
   before do
-    @kate = User.create!(email: "kate@test.com", password: "password")
+    @kate = User.create!(email: "kate@test.com", password: "password", username: "K4T3")
     login_as(@kate)
   end
 
